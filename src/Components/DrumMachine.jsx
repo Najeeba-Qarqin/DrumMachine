@@ -1,6 +1,12 @@
 import { useEffect, useState } from "react";
 
 function DrumMachine() {
+  const [activeKey, setActiveKey] = useState('');
+  useEffect(() => {
+    document.addEventListener('keydown', (event) => {
+      playSound(event.key.toUpperCase());
+    })
+  }, []);
 
   const drumPads = [
     {
@@ -62,11 +68,13 @@ function DrumMachine() {
   function playSound(selector) {
     const audio = document.getElementById(selector);
     audio.play();
+    setActiveKey(selector);
   }
 
   return (
     <div id='drum-machine'>
       <div className='drum-pads'>
+        <div id='display'>{activeKey}</div>
         {drumPads.map((drumPad) => (
           <div
             key={drumPad.url}
