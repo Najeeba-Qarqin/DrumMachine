@@ -69,25 +69,32 @@ function DrumMachine() {
       keyTrigger: 'C',
       id: 'Closed-HH',
       url: 'https://s3.amazonaws.com/freecodecamp/drums/Cev_H2.mp3',
-    }
+    },
   ];
 
   return (
     <div id="drum-machine">
       <div id="display">
         You Clicked The
-        <span>( {activeKey} )</span>
+        <span>
+          (
+          {activeKey}
+          )
+        </span>
         Key
       </div>
       <div className="drum-pads">
         {drumPads.map((drumPad) => (
-          <button
+          <button type="button"
             key={drumPad.url}
-            onClick={() => { playSound(drumPad.keyTrigger) }}
+            onClick={() => { playSound(drumPad.keyTrigger); }}
             className="drum-pad"
-            id={drumPad.url}>
+            id={drumPad.url}
+          >
             {drumPad.keyTrigger}
-            <audio className="clip" id={drumPad.keyTrigger} src={drumPad.url} />
+            <audio className="clip" id={drumPad.keyTrigger} src={drumPad.url}>
+              <track kind="Drum" />
+            </audio>
           </button>
         ))}
       </div>
