@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 
 function DrumMachine() {
-  
+
   const drumPads = [
     {
       keyCode: 81,
@@ -60,7 +60,17 @@ function DrumMachine() {
   ];
 
   return (
-    <div></div>
+    <div id='drum-machine'>
+      <div className='drum-pads'>
+        {drumPads.map((drumPad) => (
+          <div
+          className='drum-pad'
+          id={drumPad.url}>
+            <button className="drum-pad">{drumPad.keyTrigger}</button>
+          </div>
+        ))}
+      </div>
+    </div>
   )
 }
 
