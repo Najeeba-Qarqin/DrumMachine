@@ -73,17 +73,17 @@ function DrumMachine() {
 
   return (
     <div id='drum-machine'>
+      <div id='display'>You Clicked The <span>( {activeKey} )</span> Key</div>
       <div className='drum-pads'>
-        <div id='display'>{activeKey}</div>
         {drumPads.map((drumPad) => (
-          <div
+          <button
             key={drumPad.url}
             onClick={() => { playSound(drumPad.keyTrigger) }}
             className='drum-pad'
             id={drumPad.url}>
-            <button>{drumPad.keyTrigger}</button>
+            {drumPad.keyTrigger}
             <audio className='clip' id={drumPad.keyTrigger} src={drumPad.url}></audio>
-          </div>
+          </button>
         ))}
       </div>
     </div>
