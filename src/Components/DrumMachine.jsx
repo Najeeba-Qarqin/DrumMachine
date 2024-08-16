@@ -59,14 +59,21 @@ function DrumMachine() {
     }
   ];
 
+  function playSound(selector) {
+    const audio = document.getElementById(selector);
+    audio.play();
+  }
+
   return (
     <div id='drum-machine'>
       <div className='drum-pads'>
         {drumPads.map((drumPad) => (
           <div
+          key={drumPad.url}
+          onClick={() => { playSound(drumPad.keyTrigger) }}
           className='drum-pad'
           id={drumPad.url}>
-            <button className="drum-pad">{drumPad.keyTrigger}</button>
+            <button>{drumPad.keyTrigger}</button>
           </div>
         ))}
       </div>
