@@ -85,7 +85,8 @@ function DrumMachine() {
       </div>
       <div className="drum-pads">
         {drumPads.map((drumPad) => (
-          <button type="button"
+          <button
+            type="button"
             key={drumPad.url}
             onClick={() => { playSound(drumPad.keyTrigger); }}
             className="drum-pad"
@@ -93,7 +94,12 @@ function DrumMachine() {
           >
             {drumPad.keyTrigger}
             <audio className="clip" id={drumPad.keyTrigger} src={drumPad.url}>
-              <track kind="Drum" />
+              <track
+                kind="captions"
+                srcLang="en"
+                src={drumPad.id}
+                label="English"
+              />
             </audio>
           </button>
         ))}
