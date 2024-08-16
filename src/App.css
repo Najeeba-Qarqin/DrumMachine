@@ -54,7 +54,7 @@ span {
 
 @media (min-width: 700px) {
   .App {
-    margin: 200px 100px 100px 150px;
+    margin: 200px;
     padding: 30px;
   }
 
@@ -72,7 +72,7 @@ span {
   }
 
   .App {
-    margin: 90px 120px;
+    margin: 90px 200px;
     padding: 30px;
   }
 
