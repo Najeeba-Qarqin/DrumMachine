@@ -1,0 +1,84 @@
+:root {
+  background: url(./images/bg.jpg) no-repeat;
+  background-position: bottom;
+  background-size: cover;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+}
+
+.App {
+  color: white;
+  margin: 200px 50px;
+  background-color: rgba(255, 255, 224, 0.1);
+  backdrop-filter: blur(10px);
+  width: fit-content;
+  border-radius: 30px;
+  box-shadow: 1px 1px 20px lightyellow;
+  padding: 20px;
+}
+
+.drum-pads {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 20px;
+  grid-template-rows: 1fr 1fr 1fr;
+  margin: 50px auto;
+  width: min-content;
+}
+
+.drum-pad {
+  width: 50px;
+  height: 50px;
+  border: 2px solid #2f2f2f;
+  background-color: #2f2f2f;
+  color: white;
+  font-size: 15px;
+  font-weight: 600;
+  border-radius: 8px;
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.drum-pad:active {
+  transform: translate(-2px, -2px);
+  box-shadow: 4px 4px 10px lightyellow;
+  color: lightyellow;
+}
+
+span {
+  color: black;
+  font-weight: 900;
+}
+
+@media (min-width: 700px) {
+  .App {
+    margin: 200px;
+    padding: 30px;
+  }
+
+  .drum-pad {
+    width: 70px;
+    height: 70px;
+    font-size: 20px;
+  }
+}
+
+@media (min-width: 1000px) {
+  :root {
+    display: flex;
+    justify-content: left;
+  }
+
+  .App {
+    margin: 90px 200px;
+    padding: 30px;
+  }
+
+  .drum-pad {
+    width: 70px;
+    height: 70px;
+    font-size: 20px;
+  }
+}
